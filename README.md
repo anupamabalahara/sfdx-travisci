@@ -14,6 +14,13 @@ git clone https://github.com/anupamabalahara/sfdx-travisci.git
 sfdx force:auth:web:login -d -a DevHub
 sfdx force:org:list
 
+travis env set CONSUMER_KEY=<connected app consumer key>
+travis env set JWT_KEY_FILE=<your server.key path>
+travis env set HUB_USERNAME=<your Dev Hub username>
+
+sfdx force:auth:jwt:grant --clientid ${CONSUMER_KEY} --username ${HUB_USERNAME} --jwtkeyfile ${JWT_KEY_FILE} --setdefaultdevhubusername
+
+
 7. In YAML file, add in the required SLDX scripts which will be run a change is pushed into Git
 
 8. Git push commands 
