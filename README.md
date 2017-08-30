@@ -18,7 +18,7 @@ travis env set CONSUMER_KEY=<connected app consumer key>
 
 travis env set JWT_KEY_FILE=<your server.key path>
 
-travis env set HUB_USERNAME=<your Dev Hub username>
+travis env set HUB_USERNAME=<your Dev Hub username>	
 
 sfdx force:auth:jwt:grant --clientid ${CONSUMER_KEY} --username ${HUB_USERNAME} --jwtkeyfile ${JWT_KEY_FILE} --setdefaultdevhubusername
 
